@@ -54,22 +54,23 @@ const projects = [
     video: "https://drive.google.com/file/d/1orqGBaN6-_jsLceahFXQ7HNTz76l81Cj/preview",
     emoji: "⌨️"
   },
-  {
-    title: "SkillForgeIQ",
-    year: "2025",
-    description: "A dynamic and responsive portfolio platform that showcases an individual's skills, projects, and achievements. It includes an AI-powered chatbot for real-time interaction and feedback, making it ideal for personal branding.",
-    tech: [
-      { name: "React Js", percentage: 40, color: "#0F766E" },
-      { name: "Tailwind CSS", percentage: 25, color: "#22C55E" },
-      { name: "Gemini API", percentage: 20, color: "#A855F7" },
-      { name: "GSAP", percentage: 15, color: "#E11D48" },
-    ],
-    category: "Portfolio",
-    color: "from-cyan-500 to-teal-500",
-    github: "https://github.com/Pragatees/SkillForgeIQ",
-    video: "https://drive.google.com/file/d/1CLCs5azjqjEbdx_JN-4dPQ7qU25KrRPM/preview",
-    emoji: "💼"
-  },
+{
+  title: "SkillForgeIQ",
+  year: "2025",
+  description: "A dynamic and responsive portfolio platform that showcases an individual's skills, projects, and achievements. It includes an AI-powered chatbot for real-time interaction and feedback, making it ideal for personal branding.",
+  tech: [
+    { name: "React Js", percentage: 40, color: "#0F766E" },
+    { name: "Tailwind CSS", percentage: 25, color: "#22C55E" },
+    { name: "Gemini API", percentage: 20, color: "#A855F7" },
+    { name: "GSAP", percentage: 15, color: "#E11D48" },
+  ],
+  category: "Portfolio",
+  color: "from-cyan-500 to-teal-500",
+  github: "https://github.com/Pragatees/portfolio-mod",
+  video: "https://drive.google.com/file/d/1VCIOMWB_dtF09_6yHrxms9D0xTBhluCM/preview",
+  emoji: "💼"
+}
+,
   {
     title: "Voice Tide",
     year: "2024",
