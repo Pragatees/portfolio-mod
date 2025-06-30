@@ -1,0 +1,227 @@
+import React, { useState, useEffect } from 'react';
+import { Phone, MessageCircle, Instagram, Download, Mail } from 'lucide-react';
+import prof from './things/profile.jpg';
+import res from './things/resume.pdf';
+
+function Home() {
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimationStarted(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = res;
+    link.download = 'Pragateesh_G_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Subtle Animated Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-teal-500/10 rounded-full blur-xl animate-float-delayed"></div>
+      </div>
+
+      <div className="max-w-10xl w-full relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen lg:min-h-[80vh] py-8 lg:py-0">
+          {/* Content Section */}
+          <div className={`order-2 lg:order-1 text-center lg:text-left space-y-6 lg:space-y-8 w-full ${animationStarted ? 'animate-fade-in' : 'opacity-0'}`}>
+            <div className="space-y-4">
+              <div className="relative">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent leading-tight">
+                  Pragateesh G
+                </h1>
+                <div className="absolute -bottom-2 left-0 lg:left-0 right-0 lg:right-auto h-1 w-24 bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto lg:mx-0 rounded-full"></div>
+              </div>
+              
+              <h2 className="text-xl sm:text-2xl font-medium text-gray-300">
+                <span className="text-emerald-400">AI Innovator</span> & <span className="text-teal-400">Full Stack Developer</span>
+              </h2>
+            </div>
+            
+            <div className="space-y-4 lg:space-y-6 max-w-2xl mx-auto lg:mx-0">
+              <div className="space-y-3 lg:space-y-4 text-base sm:text-lg leading-relaxed text-gray-300">
+                <p>
+                  A passionate <span className="text-emerald-400 font-medium">B.Tech (AI & DS)</span> student at 
+                  <span className="text-teal-400 font-medium"> Sri Eshwar College of Engineering</span> (2022-2026).
+                </p>
+                
+                <p>
+                  Specializing in <span className="text-emerald-400 font-medium">AI-driven solutions</span> and 
+                  <span className="text-teal-400 font-medium"> full-stack applications</span> that solve real-world challenges.
+                </p>
+                
+                <p>
+                  Expert in <span className="text-emerald-300 font-medium">Machine Learning</span>, 
+                  <span className="text-teal-300 font-medium"> Data Science</span>, and modern web technologies.
+                </p>
+                
+                <div className="pt-2">
+                  <p className="text-lg sm:text-xl font-medium italic text-gray-400">
+                    "Exploring the Future with Generative AI, Crafting Creativity with Full Stack, and Driving Insights as a Data Scientist."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 lg:pt-4">
+              <a 
+                href="#projects"
+                className="group px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-medium rounded-lg hover:scale-[1.02] transform transition-all duration-300 shadow-lg hover:shadow-emerald-500/30 relative overflow-hidden"
+              >
+                <span className="relative z-10">View My Work</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a 
+                href="#contact"
+                className="group px-6 py-3 border border-teal-600 text-teal-400 font-medium rounded-lg hover:bg-teal-900/50 hover:text-white transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
+              >
+                <span className="relative z-10">Get In Touch</span>
+              </a>
+            </div>
+
+            {/* Social Media Icons & Resume Download */}
+            <div className="pt-4 lg:pt-8 space-y-4 lg:space-y-6">
+              <div className="flex justify-center lg:justify-start space-x-4">
+                <a
+                  href="tel:+917010441464"
+                  className="group p-3 rounded-lg bg-slate-800 hover:bg-emerald-700/50 hover:scale-110 transform transition-all duration-300"
+                  title="Call Me"
+                >
+                  <Phone className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://wa.me/917010441464"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-lg bg-slate-800 hover:bg-green-700/50 hover:scale-110 transform transition-all duration-300"
+                  title="WhatsApp"
+                >
+                  <MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+                <a
+                  href="https://instagram.com/haripragateesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-lg bg-slate-800 hover:bg-pink-700/50 hover:scale-110 transform transition-all duration-300"
+                  title="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+                <a
+                  href="mailto:haripragateesh7@gmail.com"
+                  className="group p-3 rounded-lg bg-slate-800 hover:bg-blue-700/50 hover:scale-110 transform transition-all duration-300"
+                  title="Email"
+                >
+                  <Mail className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                </a>
+              </div>
+
+              {/* Resume Download Button */}
+              <div className="flex justify-center lg:justify-start">
+                <button
+                  onClick={handleDownloadResume}
+                  className="group flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-700 to-teal-700 text-white font-medium rounded-lg hover:scale-[1.02] transform transition-all duration-300"
+                >
+                  <Download className="w-4 h-4 group-hover:animate-bounce" />
+                  <span>Download Resume</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Profile Image Section */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-8 lg:mb-0">
+            <div className={`relative group ${animationStarted ? 'animate-fade-in' : 'opacity-0'}`}>
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                {imageError ? (
+                  <div className="w-full h-full rounded-full bg-gradient-to-r from-slate-700 to-slate-600 shadow-lg border-4 border-white/10 flex items-center justify-center text-white text-xl font-bold">
+                    Profile Image
+                  </div>
+                ) : (
+                  <img
+                    src={prof}
+                    alt="Pragateesh G Profile"
+                    className="w-full h-full rounded-full object-cover shadow-lg border-4 border-white/10 transform group-hover:scale-[1.02] transition-all duration-500 relative z-10"
+                    onError={() => setImageError(true)}
+                  />
+                )}
+                <div className="absolute inset-0 rounded-full border-2 border-emerald-500/30 group-hover:border-emerald-500/50 transition-all duration-300"></div>
+                <div className="absolute -inset-4 rounded-full border border-teal-500/20 animate-spin-slow"></div>
+                <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-emerald-500/10 blur-xl group-hover:opacity-30 transition-all duration-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        
+        @keyframes float-delayed {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+          animation: float-delayed 10s ease-in-out infinite;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+export default Home;
